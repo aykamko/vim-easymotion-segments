@@ -30,13 +30,13 @@ let s:save_cpo = &cpo
 set cpo&vim
 " }}}
 
-let s:left_boundaries = ['_\+\i', '\<', '\l\u', '\u\u\ze\l', '\a\d', '\d\a']
+let s:left_boundaries = ['\([_\-]\+\)\@<=\i', '\<', '\(\l\)\@<=\u', '\(\u\u\)\@<=\l', '\(\a\)\@<=\d', '\(\d\)\@<=\a']
 let s:left_boundary = join(s:left_boundaries, '\|')
-let s:right_boundaries = ['_', '\l\u', '\u\u\l', '\a\d', '\d\a', '\i\>']
+let s:right_boundaries = ['[^_\-][_\-]', '\l\u', '\(\u\)\@<=\u\l', '\a\d', '\d\a', '\i\>']
 let s:right_boundary = join(s:right_boundaries, '\|')
 
 function! easymotion#segments#left(visualmode, direction)
-    return EasyMotion#User(s:left_boundary, a:visualmode, a:direction, 0)
+    return EasyMotion#User(s:left_boundary, a:visualmode, a:direction, 0) " a:direction)
 endfunction
 function! easymotion#segments#right(visualmode, direction)
     return EasyMotion#User(s:right_boundary, a:visualmode, a:direction, 1)
