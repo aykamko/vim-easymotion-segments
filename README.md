@@ -1,5 +1,8 @@
 # vim-easymotion-segments
 
+![yas](demo.gif)
+> GIF created with [ttystudio](https://github.com/chjj/ttystudio)
+
 An EasyMotion extension plugin that allows jumping to variable segments in words. A variable segment is defined to be a
 substring in any identifier character followed by an underscore ("snake case") or a lowercase identifier character
 followed by an uppercase character ("camel case"). Read [here](https://github.com/Julian/vim-textobj-variable-segment)
@@ -14,7 +17,7 @@ Requires [vim-easymotion](https://github.com/easymotion/vim-easymotion).
 
 
 > Thanks To:
-> 
+>
 - Kim Silkebækken & haya14busa (authors of [EasyMotion](https://github.com/easymotion/vim-easymotion))
 - [vim-easyoperator-line](https://github.com/haya14busa/vim-easyoperator-line)
 - Julian (author of [vim-textobj-variable-segment](https://github.com/Julian/vim-textobj-variable-segment))
